@@ -23,6 +23,10 @@ const SignupPage = () => {
     try {
       await user.signUp();
       setShowSuccessMsg(true);
+      setUsername('');
+      setPassword('');
+      setPasswordConfirm('');
+      setError('');
     } catch (e) {
       setError(e.message);
     }
