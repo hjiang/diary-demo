@@ -86,7 +86,7 @@ const DiaryPage = () => {
       <h2>Entries</h2>
       {entries.map(entry => (
         <div key={entry.id}>
-          <div className={style.date}>{entry.date.toString()}</div>
+          <div className={style.date}>{entry.date.toDateString()}</div>
           <div className={style.content}>{entry.content}</div>
         </div>
       ))}

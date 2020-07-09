@@ -32,8 +32,8 @@ const SignupPage = () => {
     }
   };
   return (
-    <div>
-      <form>
+    <div className={style.container}>
+      <form className={style.smallForm}>
         {error.length > 0 && <div className={style.error}>{error}</div>}
         <label>Username</label>
         <input value={username} onChange={e => setUsername(e.target.value)} />

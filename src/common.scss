@@ -20,3 +20,37 @@ body {
 .error {
   color: red;
 }
+
+label {
+  display: block;
+}
+button {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+input {
+  width: 100%;
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  height: 3rem;
+}
+
+.smallForm {
+  max-width: 30rem;
+}
+
+textarea {
+  width: 100%;
+  font-size: 2rem;
+  height: 8rem;
+}
+
+h2 {
+  margin: 2rem 0;
+}
+
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+}
