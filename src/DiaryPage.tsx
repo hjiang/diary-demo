@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import marked from 'marked';
+import DOMPurify from 'dompurify';
 
 import LC from './lc';
 import style from './DiaryPage.module.scss';
@@ -58,6 +60,7 @@ const DiaryPage = () => {
         user: me,
         content: newEntry
       });
+      setNewEntry('');
       setEntries([
         {
           id: savedEntry.id!,
@@ -87,7 +90,12 @@ const DiaryPage = () => {
       {entries.map(entry => (
         <div key={entry.id}>
           <div className={style.date}>{entry.date.toDateString()}</div>
-          <div className={style.content}>{entry.content}</div>
+          <div
+            className={style.content}
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(marked(entry.content))
+            }}
+          />
         </div>
       ))}
     </div>
